@@ -1,0 +1,77 @@
+# Preparing a firmware release
+
+## Local inputs
+
+Compile the desired board manually in ESPImageDisplay. Confirm its target and
+version before compilation. Create its local `manifest.json` using
+ESPImageServer's `scripts/package-firmware.ps1` as usual. Use a fresh build
+with Wi-Fi credentials supplied through USB/device storage.
+
+The local library can include older versions and build metadata. The release
+preparer scans only the library root, board folders, and version folders. It
+selects the exact requested version and rejects duplicate board/version pairs.
+
+## Prepare the assets
+
+Python 3.10 or newer is required for maintainers. No additional Python packages
+are needed. Run from this repository:
+
+```powershell
+python -m unittest discover -s tests -v
+python scripts/prepare_release.py --library 'C:\Users\charles\Desktop\ESPImage Firmwares' --version 1.1.4
+python scripts/prepare_release.py --library 'C:\Users\charles\Desktop\ESPImage Firmwares' --version 1.1.5
+```
+
+For each selected package the script checks the manifest format, board/chip,
+file sizes and SHA-256 hashes, ESP image chip headers, flash capacity, offsets,
+erase-sector overlap, and application partition fit. Board identity/version
+are publisher declarations, to be checked against the actual build and after
+flashing; binary validation alone does not establish hardware acceptance or
+the absence of compiled credentials.
+
+Output goes to `dist/v<version>/`:
+
+- One `ESPImageDisplay-<BOARD_TARGET>-<version>.zip` per included board.
+- `SHA256SUMS.txt` for those ZIPs.
+- `release-notes.md`, based on the matching file in `releases/`, with an asset list.
+
+ZIPs contain only a cleaned manifest, its four binaries, and the project license.
+They exclude `build.options.json`, `flash_args`, source, logs, ELF/map files,
+merged binaries, and unrelated files. ZIP timestamps are fixed for repeatable
+output. The original local packages are never edited.
+
+Existing output folders are never replaced. To prepare a fresh comparison,
+pass `--output` with another output root. Do not replace already published
+firmware with different bytes under the same version; assign a new version.
+
+## Review and publish
+
+1. Record the included boards, source/build provenance, changes, hardware
+   results, and remaining limitations in `releases/v<version>.md`. Only claim
+   tests actually performed. Retain applicable dependency license notices
+   with the release materials.
+2. Prepare the assets, extract each ZIP, and check that ESPImageServer accepts
+   it. Complete the intended physical-board checks. A successful packaging
+   test does not prove flashing, boot, Wi-Fi, or recovery.
+3. Commit and push the documentation, scripts, tests, and reviewed release notes.
+   Generated binaries and ZIPs remain outside Git history (`dist/` is ignored).
+4. On the repository's **Releases** page, choose **Draft a new release** and
+   create the matching `v<version>` tag. This tag identifies the distribution
+   repository revision; it is not automatically the firmware source commit.
+5. Paste the generated `dist/v<version>/release-notes.md` into the description.
+   Attach the ZIPs and `SHA256SUMS.txt`. Save the draft for review; choose
+   **This is a pre-release** when hardware acceptance remains incomplete.
+6. Publish when the listed test status and assets are ready for users.
+
+GitHub documents the draft, asset-upload, and publication steps in
+[Managing releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+The local preparation command does not create commits, tags, drafts, or uploads.
+
+## Current preparation
+
+- **1.1.4:** JC4827W543, ESP32-C6 LCD 1.47, and Waveshare ST7701 320×820.
+- **1.1.5:** Cheap Yellow Display; the new status layout is included. Its
+  physical hardware acceptance has not yet been recorded here.
+
+Do not advertise 1.1.5 packages for other boards until they have been compiled,
+packaged, and checked. See each version's release notes for the current evidence.

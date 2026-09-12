@@ -1,0 +1,12 @@
+/dist/
+__pycache__/
+*.pyc
+*.bin
+*.zip
+*.elf
+*.map
+build.options.json
+flash_args
+secrets.h
+.DS_Store
+Thumbs.db
