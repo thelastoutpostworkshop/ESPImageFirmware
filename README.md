@@ -20,7 +20,23 @@ contain only some of the supported boards.
 Choose the exact display model. The two ESP32-S3 displays use different
 firmware even though they share a chip family.
 
-## Install from the desktop app
+## Install directly in ESPImageServer
+
+In the updated desktop app, open **Set up display**, connect USB, and choose
+**Check display**. The app checks this repository for firmware matching your
+board. Select **Review update**, let the app download and verify the package,
+then review and confirm installation. No GitHub account, manual download,
+extraction, or firmware folder selection is needed.
+
+If the display cannot report its identity yet, choose **Install firmware on
+this display**, select the physical model, and download its matching firmware.
+**Include preview firmware releases** makes preview builds available explicitly.
+The app never flashes a board just because a new release exists.
+
+This requires the desktop app with GitHub firmware support. Older installed
+versions can still use the manual steps below until updated.
+
+## Manual installation / older desktop apps
 
 1. Download the board's ZIP from a release's **Assets** list. For example:
    `ESPImageDisplay-CHEAP_YELLOW_DISPLAY-1.1.5.zip`.
@@ -47,8 +63,7 @@ firmware even though they share a chip family.
    through writing, verification, and restart.
 6. Set up Wi-Fi if requested. Confirm the display reaches **Ready**.
 
-The desktop app currently reads local packages. Download and extract these
-ZIPs manually; GitHub update checks and ZIP imports are not yet integrated.
+Manual downloads remain available for offline use and older desktop apps.
 GitHub's automatically generated **Source code** archives contain this
 repository's documentation and tools, not compiled firmware.
 

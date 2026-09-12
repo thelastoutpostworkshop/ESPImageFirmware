@@ -75,3 +75,23 @@ The local preparation command does not create commits, tags, drafts, or uploads.
 
 Do not advertise 1.1.5 packages for other boards until they have been compiled,
 packaged, and checked. See each version's release notes for the current evidence.
+
+## Upload and publish from this checkout
+
+The desktop app discovers published releases in this repository by exact board
+filename, version tag, and accompanying `SHA256SUMS.txt`. It downloads and
+validates ZIPs automatically. Keep this naming format for future releases.
+Drafts are invisible to users; preview releases require an explicit choice in
+the app. A release may include only the boards compiled for that version.
+
+After reviewing the notes and pushing this repository's changes, upload with:
+
+```powershell
+python scripts/publish_release.py --version 1.1.4 --publish
+python scripts/publish_release.py --version 1.1.5 --prerelease --publish
+```
+
+Omit `--publish` to leave a draft. The uploader uses your configured Git
+credential helper, verifies uploaded hashes, and refuses to replace published
+assets. It can resume an incomplete draft if existing asset hashes match.
+It does not compile firmware or publish an ESPImageServer installer.
