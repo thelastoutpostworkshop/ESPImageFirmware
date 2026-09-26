@@ -46,6 +46,16 @@ class ReleaseTests(unittest.TestCase):
         segment.update(size_bytes=len(data), sha256=hashlib.sha256(data).hexdigest())
         self.save()
 
+    def test_version_suffixes_rejected(self):
+        for version in ('1.2.0-beta', '1.2.0+build'):
+            with self.subTest(version=version):
+                with self.assertRaisesRegex(ValueError, 'version'):
+                    release.prepare_release(self.library, version, self.root / 'out')
+                self.manifest['firmware_version'] = version
+                self.save()
+                with self.assertRaisesRegex(ValueError, 'version'):
+                    release.validate_package(self.package)
+
     def test_amoled_release_uses_s3_headers_and_board_filename(self):
         self.manifest.update(board_target="ESP32_S3_AMOLED_143", chip="esp32s3")
         self.manifest["flash"]["size_bytes"] = 16 * 1048576

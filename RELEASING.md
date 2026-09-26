@@ -59,8 +59,8 @@ firmware with different bytes under the same version; assign a new version.
    create the matching `v<version>` tag. This tag identifies the distribution
    repository revision; it is not automatically the firmware source commit.
 5. Paste the generated `dist/v<version>/release-notes.md` into the description.
-   Attach the ZIPs and `SHA256SUMS.txt`. Save the draft for review; choose
-   **This is a pre-release** when hardware acceptance remains incomplete.
+   Attach the ZIPs and `SHA256SUMS.txt`. Save the draft for review. Keep it unpublished when hardware acceptance
+   remains incomplete; do not publish prereleases.
 6. Publish when the listed test status and assets are ready for users.
 
 GitHub documents the draft, asset-upload, and publication steps in
@@ -81,14 +81,14 @@ packaged, and checked. See each version's release notes for the current evidence
 The desktop app discovers published releases in this repository by exact board
 filename, version tag, and accompanying `SHA256SUMS.txt`. It downloads and
 validates ZIPs automatically. Keep this naming format for future releases.
-Drafts are invisible to users; preview releases require an explicit choice in
-the app. A release may include only the boards compiled for that version.
+Drafts and GitHub prereleases are excluded from the app. Only plain
+major.minor.patch versions are accepted, with no version suffixes. A release may include only the boards compiled for that version.
 
 After reviewing the notes and pushing this repository's changes, upload with:
 
 ```powershell
 python scripts/publish_release.py --version 1.1.4 --publish
-python scripts/publish_release.py --version 1.1.5 --prerelease --publish
+python scripts/publish_release.py --version 1.1.5 --publish
 ```
 
 Omit `--publish` to leave a draft. The uploader uses your configured Git

@@ -31,7 +31,8 @@ extraction, or firmware folder selection is needed.
 
 If the display cannot report its identity yet, choose **Install firmware on
 this display**, select the physical model, and download its matching firmware.
-**Include preview firmware releases** makes preview builds available explicitly.
+Only stable releases with plain major.minor.patch versions are supported.
+Drafts and GitHub prereleases are excluded.
 The app never flashes a board just because a new release exists.
 
 This requires the desktop app with GitHub firmware support. Older installed

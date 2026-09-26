@@ -69,7 +69,7 @@ def prepared_assets(directory, version):
     return assets
 
 
-def publish(version, directory, prerelease=False, publish_now=False):
+def publish(version, directory, *, publish_now=False):
     if not VERSION.fullmatch(version):
         raise ValueError("Invalid version")
     assets = prepared_assets(directory, version)
@@ -83,8 +83,8 @@ def publish(version, directory, prerelease=False, publish_now=False):
         raise ValueError(f"{tag} is already published. Published release assets are never replaced.")
     release = existing or github.request(API + "/releases", "POST", {
         "tag_name": tag, "target_commitish": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-        "name": f"ESPImageDisplay {version}" + (" (preview)" if prerelease else ""),
-        "body": notes, "draft": True, "prerelease": prerelease})
+        "name": f"ESPImageDisplay {version}",
+        "body": notes, "draft": True, "prerelease": False})
     uploaded = {asset["name"]: asset for asset in release["assets"]}
     if set(uploaded) - set(assets):
         raise ValueError("Draft contains unexpected assets; review it before continuing.")
@@ -100,8 +100,8 @@ def publish(version, directory, prerelease=False, publish_now=False):
                 raise ValueError(f"GitHub upload verification failed: {name}; release remains a draft.")
         print(f"Verified upload: {name}")
     result = github.request(API + f"/releases/{release['id']}", "PATCH", {
-        "body": notes, "draft": not publish_now, "prerelease": prerelease,
-        "make_latest": "false" if prerelease else "true"})
+        "body": notes, "draft": not publish_now, "prerelease": False,
+        "name": f"ESPImageDisplay {version}", "make_latest": "true"})
     print(("Published: " if publish_now else "Draft ready: ") + result["html_url"])
 
 
@@ -109,11 +109,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--version", required=True)
     parser.add_argument("--directory", type=Path)
-    parser.add_argument("--prerelease", action="store_true")
     parser.add_argument("--publish", action="store_true", help="Publish after all uploads verify; otherwise leave a draft")
     args = parser.parse_args()
     try:
-        publish(args.version, args.directory or ROOT / "dist" / ("v" + args.version), args.prerelease, args.publish)
+        publish(args.version, args.directory or ROOT / "dist" / ("v" + args.version), publish_now=args.publish)
     except urllib.error.HTTPError as error:
         parser.exit(1, f"GitHub request failed (HTTP {error.code}); any incomplete release remains a draft.\n")
     except (ValueError, OSError, subprocess.SubprocessError) as error:
