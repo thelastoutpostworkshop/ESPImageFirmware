@@ -69,6 +69,8 @@ The local preparation command does not create commits, tags, drafts, or uploads.
 
 ## Current preparation
 
+- **1.1.13:** Waveshare ESP32-S3 Touch AMOLED 1.43; maintainer-confirmed release build. See `releases/v1.1.13.md` for provenance and validation.
+
 - **1.1.4:** JC4827W543, ESP32-C6 LCD 1.47, and Waveshare ST7701 320×820.
 - **1.1.5:** Cheap Yellow Display; the new status layout is included. Its
   physical hardware acceptance has not yet been recorded here.
@@ -103,5 +105,5 @@ It does not compile firmware or publish an ESPImageServer installer.
 Use ESPImageServer's updated package-firmware.ps1 for the named Arduino board
 `waveshare_esp32_s3_touch_amoled_143`, whose flash size is fixed at 16 MB.
 The asset must be `ESPImageDisplay-ESP32_S3_AMOLED_143-<version>.zip`.
-No AMOLED firmware binary or release is supplied by this source change;
-compile, package, and record physical acceptance before publishing it.
+AMOLED firmware is packaged in version 1.1.13. For later releases, compile,
+package, and record physical acceptance before publishing.

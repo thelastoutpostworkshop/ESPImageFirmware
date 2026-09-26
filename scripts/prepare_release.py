@@ -115,7 +115,10 @@ def validate_package(directory):
     require(isinstance(notes, str) and len(notes) <= 2000, "Invalid release notes")
     clean["release_notes"] = notes
     if "fqbn" in m:
-        require(isinstance(m["fqbn"], str) and re.fullmatch(r"esp32:esp32:" + chip + r":[A-Za-z0-9_=,.-]+", m["fqbn"]),
+        board_ids = [chip]
+        if board == "ESP32_S3_AMOLED_143" and capacity == 16 * 1048576:
+            board_ids.append("waveshare_esp32_s3_touch_amoled_143")
+        require(isinstance(m["fqbn"], str) and re.fullmatch(r"esp32:esp32:(?:" + "|".join(board_ids) + r"):[A-Za-z0-9_=,.-]+", m["fqbn"]),
                 "Invalid FQBN")
         clean["fqbn"] = m["fqbn"]
     return clean, binaries

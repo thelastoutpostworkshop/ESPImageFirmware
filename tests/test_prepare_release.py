@@ -58,6 +58,7 @@ class ReleaseTests(unittest.TestCase):
 
     def test_amoled_release_uses_s3_headers_and_board_filename(self):
         self.manifest.update(board_target="ESP32_S3_AMOLED_143", chip="esp32s3")
+        self.manifest["fqbn"] = "esp32:esp32:waveshare_esp32_s3_touch_amoled_143:FlashMode=qio,PSRAM=enabled"
         self.manifest["flash"]["size_bytes"] = 16 * 1048576
         for role in ("application", "bootloader"):
             segment = next(s for s in self.manifest["segments"] if s["role"] == role)
@@ -68,6 +69,10 @@ class ReleaseTests(unittest.TestCase):
             self.replace_binary(role, image)
         output = release.prepare_release(self.library, "1.1.5", self.root / "out")
         self.assertTrue((output / "ESPImageDisplay-ESP32_S3_AMOLED_143-1.1.5.zip").is_file())
+        self.manifest["board_target"] = "ST7701_320X820"
+        self.save()
+        with self.assertRaisesRegex(ValueError, "Invalid FQBN"):
+            release.validate_package(self.package)
 
     def test_release_contains_only_installation_files_and_valid_checksum(self):
         (self.package / "secrets.h").write_text("private fixture")
