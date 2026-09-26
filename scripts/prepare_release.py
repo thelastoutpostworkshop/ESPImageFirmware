@@ -13,7 +13,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parent.parent
 BOARDS = {"JC4827W543": ("esp32s3", 9), "ST7701_320X820": ("esp32s3", 9),
-          "ESP32_C6_LCD_147": ("esp32c6", 13), "CHEAP_YELLOW_DISPLAY": ("esp32", 0)}
+          "ESP32_C6_LCD_147": ("esp32c6", 13), "CHEAP_YELLOW_DISPLAY": ("esp32", 0),
+          "ESP32_S3_AMOLED_143": ("esp32s3", 9)}
 VERSION = re.compile(r"[0-9]+\.[0-9]+\.[0-9]+(?:[-+][A-Za-z0-9.-]+)?")
 ROLES = {"bootloader", "partition_table", "ota_data", "application"}
 

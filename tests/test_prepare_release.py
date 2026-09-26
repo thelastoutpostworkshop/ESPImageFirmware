@@ -46,6 +46,19 @@ class ReleaseTests(unittest.TestCase):
         segment.update(size_bytes=len(data), sha256=hashlib.sha256(data).hexdigest())
         self.save()
 
+    def test_amoled_release_uses_s3_headers_and_board_filename(self):
+        self.manifest.update(board_target="ESP32_S3_AMOLED_143", chip="esp32s3")
+        self.manifest["flash"]["size_bytes"] = 16 * 1048576
+        for role in ("application", "bootloader"):
+            segment = next(s for s in self.manifest["segments"] if s["role"] == role)
+            image = bytearray((self.package / segment["file"]).read_bytes())
+            image[12:14] = (9).to_bytes(2, "little")
+            if role == "bootloader":
+                segment["offset"] = "0x0"
+            self.replace_binary(role, image)
+        output = release.prepare_release(self.library, "1.1.5", self.root / "out")
+        self.assertTrue((output / "ESPImageDisplay-ESP32_S3_AMOLED_143-1.1.5.zip").is_file())
+
     def test_release_contains_only_installation_files_and_valid_checksum(self):
         (self.package / "secrets.h").write_text("private fixture")
         self.manifest["local_build_path"] = "private fixture path"

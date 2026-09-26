@@ -95,3 +95,13 @@ Omit `--publish` to leave a draft. The uploader uses your configured Git
 credential helper, verifies uploaded hashes, and refuses to replace published
 assets. It can resume an incomplete draft if existing asset hashes match.
 It does not compile firmware or publish an ESPImageServer installer.
+
+
+## AMOLED target preparation
+
+`ESP32_S3_AMOLED_143` is accepted by the preparation tool as ESP32-S3.
+Use ESPImageServer's updated package-firmware.ps1 for the named Arduino board
+`waveshare_esp32_s3_touch_amoled_143`, whose flash size is fixed at 16 MB.
+The asset must be `ESPImageDisplay-ESP32_S3_AMOLED_143-<version>.zip`.
+No AMOLED firmware binary or release is supplied by this source change;
+compile, package, and record physical acceptance before publishing it.

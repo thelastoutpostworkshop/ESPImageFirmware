@@ -16,8 +16,9 @@ contain only some of the supported boards.
 | Waveshare ESP32-S3 3.16-inch / ST7701 | 320 × 820 | `ST7701_320X820` |
 | Waveshare ESP32-C6 LCD 1.47 | 172 × 320 | `ESP32_C6_LCD_147` |
 | Cheap Yellow Display | 240 × 320 | `CHEAP_YELLOW_DISPLAY` |
+| Waveshare ESP32-S3 Touch AMOLED 1.43 | 466 x 466 (round) | `ESP32_S3_AMOLED_143` |
 
-Choose the exact display model. The two ESP32-S3 displays use different
+Choose the exact display model. The ESP32-S3 displays use different
 firmware even though they share a chip family.
 
 ## Install directly in ESPImageServer
