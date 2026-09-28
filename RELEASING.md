@@ -69,6 +69,8 @@ The local preparation command does not create commits, tags, drafts, or uploads.
 
 ## Current preparation
 
+- **1.1.38:** All five supported boards; maintainer-confirmed credential-free release builds. See `releases/v1.1.38.md` and `releases/v1.1.38-builds.json`.
+
 - **1.1.13:** Waveshare ESP32-S3 Touch AMOLED 1.43; maintainer-confirmed release build. See `releases/v1.1.13.md` for provenance and validation.
 
 - **1.1.4:** JC4827W543, ESP32-C6 LCD 1.47, and Waveshare ST7701 320×820.

@@ -1,0 +1,244 @@
+{
+  "firmware_version": "1.1.38",
+  "firmware_source_commit": "6987b57c08566feb5d6e55fa85ccd257a2fa021b",
+  "source_checkout_clean_at_packaging": true,
+  "provenance_scope": "Accompanying source checkout and supplied exports; not a cryptographic attestation of source-to-binary correspondence. Maintainer confirms all five builds are credential-free and ready for release.",
+  "boards": {
+    "JC4827W543": {
+      "profile": "JC4827W543",
+      "fqbn": "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=dio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=opi,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "toolchain_and_library_packages": [
+        "ArduinoJson_7.4.3_65bbd090d30b7927",
+        "Async_TCP_3.4.10_c624da2a27e4fce1",
+        "Dev_Device_Pins_0.0.6_e6f98f87830d98d4",
+        "ESP_Async_WebServer_3.11.2_23043b8f76a41d18",
+        "GFX_Library_for_Arduino_1.6.7_375ccd6f80acafa4",
+        "JPEGDEC_1.8.4_e42ad60d4385eefd",
+        "TAMC_GT911_1.0.2_6d550750643d015f",
+        "esp32_esp-x32_2601_7eec6aba10bf540e",
+        "esp32_esp32_3.3.11_137f5df2cc95bae0",
+        "esp32_esp32s3-libs_3.3.11_248a8d62c92d4583"
+      ],
+      "segments": [
+        {
+          "role": "bootloader",
+          "file": "ESPImageDisplay.ino.bootloader.bin",
+          "offset": "0x0",
+          "size_bytes": 18720,
+          "sha256": "3ef75dd1e480cfca38a4a1d4cf72a19e802224dbc8cbeddf53727eb38b4743b1"
+        },
+        {
+          "role": "partition_table",
+          "file": "ESPImageDisplay.ino.partitions.bin",
+          "offset": "0x8000",
+          "size_bytes": 3072,
+          "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+        },
+        {
+          "role": "ota_data",
+          "file": "boot_app0.bin",
+          "offset": "0xe000",
+          "size_bytes": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "role": "application",
+          "file": "ESPImageDisplay.ino.bin",
+          "offset": "0x10000",
+          "size_bytes": 1277056,
+          "sha256": "cc10ea27a7ff212de8d6ccb5619b384cd1d64857b848f1c551e3662f4f65d71d"
+        }
+      ],
+      "build_dependency_references_secrets_h": false,
+      "extension_compile_result": false
+    },
+    "ST7701_320X820": {
+      "profile": "ESP32-S3-320x820",
+      "fqbn": "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,FlashSize=16M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=opi,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "toolchain_and_library_packages": [
+        "ArduinoJson_7.4.3_65bbd090d30b7927",
+        "Async_TCP_3.5.0_6decea2283b9192a",
+        "Dev_Device_Pins_0.0.6_e6f98f87830d98d4",
+        "ESP_Async_WebServer_3.12.1_8611e9f41e2b5b61",
+        "GFX_Library_for_Arduino_1.6.8_765e2ede04b51322",
+        "JPEGDEC_1.8.4_e42ad60d4385eefd",
+        "esp32_esp-x32_2601_7eec6aba10bf540e",
+        "esp32_esp32_3.3.12_feadd113249efafd",
+        "esp32_esp32s3-libs_3.3.12_69eed4af7976e1a2"
+      ],
+      "segments": [
+        {
+          "role": "bootloader",
+          "file": "ESPImageDisplay.ino.bootloader.bin",
+          "offset": "0x0",
+          "size_bytes": 19968,
+          "sha256": "84bb365666003b051f564d04380d0cf5d9d85c420ddafe9fc863071b49e49bfc"
+        },
+        {
+          "role": "partition_table",
+          "file": "ESPImageDisplay.ino.partitions.bin",
+          "offset": "0x8000",
+          "size_bytes": 3072,
+          "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+        },
+        {
+          "role": "ota_data",
+          "file": "boot_app0.bin",
+          "offset": "0xe000",
+          "size_bytes": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "role": "application",
+          "file": "ESPImageDisplay.ino.bin",
+          "offset": "0x10000",
+          "size_bytes": 1250304,
+          "sha256": "f75427be74778fb31392c73b4c82c698fe4fce91357844b97b32ac0a4b21f3e6"
+        }
+      ],
+      "build_dependency_references_secrets_h": false,
+      "extension_compile_result": false
+    },
+    "ESP32_C6_LCD_147": {
+      "profile": "ESP32-C6-LCD-1.47",
+      "fqbn": "esp32:esp32:esp32c6:UploadSpeed=921600,CDCOnBoot=cdc,CPUFreq=160,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "toolchain_and_library_packages": [
+        "ArduinoJson_7.4.3_65bbd090d30b7927",
+        "Async_TCP_3.4.10_c624da2a27e4fce1",
+        "Dev_Device_Pins_0.0.6_e6f98f87830d98d4",
+        "ESP_Async_WebServer_3.11.2_23043b8f76a41d18",
+        "GFX_Library_for_Arduino_1.6.7_375ccd6f80acafa4",
+        "JPEGDEC_1.8.4_e42ad60d4385eefd",
+        "esp32_esp-rv32_2601_c0293d3fd4ce26bc",
+        "esp32_esp32_3.3.11_137f5df2cc95bae0",
+        "esp32_esp32c6-libs_3.3.11_9d04b3923bf88409"
+      ],
+      "segments": [
+        {
+          "role": "bootloader",
+          "file": "ESPImageDisplay.ino.bootloader.bin",
+          "offset": "0x0",
+          "size_bytes": 20720,
+          "sha256": "02f53243e1ded001d79f109e938846d72bd85a91bee7a3513e4094d7c090975c"
+        },
+        {
+          "role": "partition_table",
+          "file": "ESPImageDisplay.ino.partitions.bin",
+          "offset": "0x8000",
+          "size_bytes": 3072,
+          "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+        },
+        {
+          "role": "ota_data",
+          "file": "boot_app0.bin",
+          "offset": "0xe000",
+          "size_bytes": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "role": "application",
+          "file": "ESPImageDisplay.ino.bin",
+          "offset": "0x10000",
+          "size_bytes": 1396112,
+          "sha256": "0cfb4cd6fb488a5e7b93575f7dc6481faded068efcebf962bec293928ef8513d"
+        }
+      ],
+      "build_dependency_references_secrets_h": false,
+      "extension_compile_result": false
+    },
+    "CHEAP_YELLOW_DISPLAY": {
+      "profile": "CheapYellowDisplay",
+      "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "toolchain_and_library_packages": [
+        "ArduinoJson_7.4.3_65bbd090d30b7927",
+        "Async_TCP_3.4.10_c624da2a27e4fce1",
+        "ESP_Async_WebServer_3.11.2_23043b8f76a41d18",
+        "GFX_Library_for_Arduino_1.6.7_375ccd6f80acafa4",
+        "JPEGDEC_1.8.4_e42ad60d4385eefd",
+        "esp32_esp-x32_2601_7eec6aba10bf540e",
+        "esp32_esp32-libs_3.3.11_3d17a2c49fcf1be9",
+        "esp32_esp32_3.3.11_137f5df2cc95bae0"
+      ],
+      "segments": [
+        {
+          "role": "bootloader",
+          "file": "ESPImageDisplay.ino.bootloader.bin",
+          "offset": "0x1000",
+          "size_bytes": 24992,
+          "sha256": "427f96e10c620c4f062dab15da54fc45494d897e8397ae6f3aecc98c42d7e379"
+        },
+        {
+          "role": "partition_table",
+          "file": "ESPImageDisplay.ino.partitions.bin",
+          "offset": "0x8000",
+          "size_bytes": 3072,
+          "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+        },
+        {
+          "role": "ota_data",
+          "file": "boot_app0.bin",
+          "offset": "0xe000",
+          "size_bytes": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "role": "application",
+          "file": "ESPImageDisplay.ino.bin",
+          "offset": "0x10000",
+          "size_bytes": 1264704,
+          "sha256": "7ed34d4c81b480cefe2858e84b8ce1d9f78f05301bee9cea80e644d1eb4840e3"
+        }
+      ],
+      "build_dependency_references_secrets_h": false,
+      "extension_compile_result": false
+    },
+    "ESP32_S3_AMOLED_143": {
+      "profile": "ESP32-S3-AMOLED-1.43",
+      "fqbn": "esp32:esp32:waveshare_esp32_s3_touch_amoled_143:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,PartitionScheme=app3M_fat9M_16MB,DebugLevel=none,PSRAM=enabled,LoopCore=1,EventsCore=1,EraseFlash=none",
+      "toolchain_and_library_packages": [
+        "ArduinoJson_7.4.3_65bbd090d30b7927",
+        "Async_TCP_3.5.0_6decea2283b9192a",
+        "Dev_Device_Pins_0.0.6_e6f98f87830d98d4",
+        "ESP_Async_WebServer_3.12.1_8611e9f41e2b5b61",
+        "GFX_Library_for_Arduino_1.6.8_765e2ede04b51322",
+        "JPEGDEC_1.8.4_e42ad60d4385eefd",
+        "esp32_esp-x32_2601_7eec6aba10bf540e",
+        "esp32_esp32_3.3.12_feadd113249efafd",
+        "esp32_esp32s3-libs_3.3.12_69eed4af7976e1a2"
+      ],
+      "segments": [
+        {
+          "role": "bootloader",
+          "file": "ESPImageDisplay.ino.bootloader.bin",
+          "offset": "0x0",
+          "size_bytes": 19968,
+          "sha256": "84bb365666003b051f564d04380d0cf5d9d85c420ddafe9fc863071b49e49bfc"
+        },
+        {
+          "role": "partition_table",
+          "file": "ESPImageDisplay.ino.partitions.bin",
+          "offset": "0x8000",
+          "size_bytes": 3072,
+          "sha256": "ace02503447d0f470692e65fa76002f2d77a92dc81cd3813d8aa66718d716da9"
+        },
+        {
+          "role": "ota_data",
+          "file": "boot_app0.bin",
+          "offset": "0xe000",
+          "size_bytes": 8192,
+          "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+        },
+        {
+          "role": "application",
+          "file": "ESPImageDisplay.ino.bin",
+          "offset": "0x10000",
+          "size_bytes": 1261328,
+          "sha256": "c73627799c01bbc759e14d7dbbcf5c08ce9216af42c0720d7ebc1ece466dcdbd"
+        }
+      ],
+      "build_dependency_references_secrets_h": false,
+      "extension_compile_result": true
+    }
+  },
+  "extension_result_note": "Extension result flags are recorded verbatim (four false, AMOLED true), not treated as proof of successful compilation. The maintainer supplied and approved fresh complete binaries; version/target strings, image headers, partition fit and package hashes are independently checked."
+}
