@@ -5,6 +5,7 @@ from pathlib import Path
 import struct
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 spec = importlib.util.spec_from_file_location(
@@ -90,6 +91,56 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(validated["board_target"], "CHEAP_YELLOW_DISPLAY")
         self.assertEqual((output / "SHA256SUMS.txt").read_text().strip(),
             hashlib.sha256(archive_path.read_bytes()).hexdigest() + "  " + archive_path.name)
+
+    def test_public_notes_keep_only_requested_sections_and_actual_assets(self):
+        source = self.root / "release-source"
+        (source / "releases").mkdir(parents=True)
+        (source / "LICENSE").write_bytes((release.ROOT / "LICENSE").read_bytes())
+        notes = ("# ESPImageDisplay 1.1.5\n\nInternal preparation status.\n\n"
+                 "## Release readiness\n\nNot recorded.\n\n"
+                 "## Included boards\n\n- Stale board\n\n"
+                 "## Changes since 1.1.4\n\n- Better saves.\n\n"
+                 "  ### Internal validation\n\nPrivate review details.\n\n"
+                 "## App compatibility\n\nInternal compatibility details.\n\n"
+                 "## Validation and provenance\n\nInternal build details.\n\n"
+                 "## Notices\n\nRetained in the package.\n\n"
+                 "## Prepared assets\n\n- old.zip\n")
+        notes_path = source / "releases" / "v1.1.5.md"
+        notes_path.write_text(notes, encoding="utf-8")
+        with patch.object(release, "ROOT", source):
+            output = release.prepare_release(self.library, "1.1.5", self.root / "out")
+        expected = ("Firmware packages for the included displays. Select the package matching your physical board "
+                    "in ESPImageServer’s **Set up display** page.\n\n"
+                    "## Included boards\n\n- Cheap Yellow Display (240 x 320)\n\n"
+                    "## Changes since 1.1.4\n\n- Better saves.\n\n"
+                    "## Prepared assets\n\n"
+                    "- `ESPImageDisplay-CHEAP_YELLOW_DISPLAY-1.1.5.zip` — esp32, 4 MB flash\n")
+        self.assertEqual((output / "release-notes.md").read_text(encoding="utf-8"), expected)
+        self.assertEqual(notes_path.read_text(encoding="utf-8"), notes)
+
+    def test_public_notes_list_all_five_displays_in_requested_order(self):
+        notes = release.public_release_notes("## Changes since 1.1.39\n\n- Better saves.\n",
+                                             set(release.BOARDS), ["- prepared.zip\n"])
+        self.assertTrue(notes.startswith("Firmware packages for all five supported displays."))
+        self.assertIn("## Included boards\n\n"
+                      "- JC4827W543 (480 x 272)\n"
+                      "- Waveshare ST7701 (320 x 820)\n"
+                      "- ESP32-C6 LCD 1.47 (172 x 320)\n"
+                      "- Cheap Yellow Display (240 x 320)\n"
+                      "- Waveshare ESP32-S3 Touch AMOLED 1.43 (466 x 466)\n\n", notes)
+        self.assertEqual([line for line in notes.splitlines() if line.startswith("#")],
+                         ["## Included boards", "## Changes since 1.1.39", "## Prepared assets"])
+
+    def test_missing_or_ambiguous_changes_do_not_create_a_release(self):
+        source = self.root / "release-source"
+        (source / "releases").mkdir(parents=True)
+        (source / "LICENSE").write_bytes((release.ROOT / "LICENSE").read_bytes())
+        for notes in ("", "## Changes\n- First.\n## Changes since 1.1.4\n- Second.\n"):
+            with self.subTest(notes=notes), patch.object(release, "ROOT", source):
+                (source / "releases" / "v1.1.5.md").write_text(notes, encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "exactly one Changes"):
+                    release.prepare_release(self.library, "1.1.5", self.root / "out")
+                self.assertFalse((self.root / "out" / "v1.1.5").exists())
 
     def test_tampering_rejected_without_partial_release(self):
         (self.package / "application.bin").write_bytes(b"modified")

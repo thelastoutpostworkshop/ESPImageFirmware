@@ -146,6 +146,33 @@ def discover(library, version):
     return found
 
 
+BOARD_LABELS = {
+    "JC4827W543": "JC4827W543 (480 x 272)",
+    "ST7701_320X820": "Waveshare ST7701 (320 x 820)",
+    "ESP32_C6_LCD_147": "ESP32-C6 LCD 1.47 (172 x 320)",
+    "CHEAP_YELLOW_DISPLAY": "Cheap Yellow Display (240 x 320)",
+    "ESP32_S3_AMOLED_143": "Waveshare ESP32-S3 Touch AMOLED 1.43 (466 x 466)",
+}
+
+
+def public_release_notes(notes, boards, inventory):
+    """Keep GitHub descriptions focused on boards, changes, and prepared assets."""
+    introduction = ("Firmware packages for all five supported displays." if boards == set(BOARDS)
+                    else "Firmware packages for the included displays.")
+    introduction += (" Select the package matching your physical board in ESPImageServer’s "
+                     "**Set up display** page.")
+    included = "\n".join(f"- {label}" for board, label in BOARD_LABELS.items() if board in boards)
+    sections = [introduction, "## Included boards\n\n" + included]
+    changes = list(re.finditer(
+        r"(?m)^ {0,3}##[ \t]+(Changes(?: since [0-9]+\.[0-9]+\.[0-9]+)?)[ \t]*\r?$", notes))
+    require(len(changes) == 1, "Release notes must contain exactly one Changes or Changes since <major.minor.patch> section")
+    change = changes[0]
+    body = re.split(r"(?m)^ {0,3}#{1,6}[ \t]+", notes[change.end():], maxsplit=1)[0].strip()
+    sections.append(f"## {change.group(1)}\n\n{body}")
+    sections.append("## Prepared assets\n\n" + "".join(inventory).strip())
+    return "\n\n".join(sections) + "\n"
+
+
 def prepare_release(library, version, output_root=ROOT / "dist"):
     require(isinstance(version, str) and VERSION.fullmatch(version), "Invalid release version")
     output_root = Path(output_root).resolve()
@@ -182,9 +209,8 @@ def prepare_release(library, version, output_root=ROOT / "dist"):
             inventory.append(f"- `{name}` — {manifest['chip']}, {manifest['flash']['size_bytes'] // 1048576} MB flash\n")
         (release / "SHA256SUMS.txt").write_text("".join(sums), encoding="utf-8")
         notes_path = ROOT / "releases" / f"v{version}.md"
-        notes = notes_path.read_text(encoding="utf-8") if notes_path.exists() else (
-            f"# Firmware {version}\n\nDraft: add release notes and board-specific hardware test results before publishing.\n")
-        (release / "release-notes.md").write_text(notes + "\n## Prepared assets\n\n" + "".join(inventory), encoding="utf-8")
+        notes = notes_path.read_text(encoding="utf-8") if notes_path.exists() else ""
+        (release / "release-notes.md").write_text(public_release_notes(notes, boards, inventory), encoding="utf-8")
         release.rename(destination)
     return destination
 

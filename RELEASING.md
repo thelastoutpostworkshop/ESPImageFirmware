@@ -1,5 +1,60 @@
 # Preparing a firmware release
 
+## Scope of a release request
+
+A request to **release firmware** or **create a firmware release** includes the
+complete workflow: validate and package every requested board/version export,
+commit and push the necessary distribution documentation and provenance, create
+the matching tag/release, and upload every validated board ZIP plus
+`SHA256SUMS.txt`. The release request authorizes those uploads; do not ask for
+separate asset-upload permission. A request limited to preparing local packages
+does not authorize remote changes.
+
+Use `scripts/publish_release.py` to create and upload a draft or published
+release. Omit `--publish` for a draft. Before reporting completion, verify the
+remote filenames, complete requested board set, sizes, and hashes. An empty
+release or documentation-only push does not fulfill a firmware release request.
+
+Fresh, credential-free builds remain required. Use available source/build
+evidence and recorded maintainer information, and report verification limits.
+Do not add a blanket verbal-confirmation step; ask only about a specific
+unresolved issue that prevents safely selecting or distributing a package.
+
+Record hardware checks actually performed. If hardware acceptance is incomplete,
+upload all validated assets to an unpublished draft and list the remaining
+checks. Hardware testing determines publication readiness, not permission to
+attach validated binaries to a draft. Follow the user's requested draft or
+publication scope and recorded readiness without an extra approval ceremony.
+
+## GitHub release description
+
+For future firmware releases, keep only these parts in the GitHub description,
+in this order:
+
+1. The introduction: Firmware packages for all five supported displays. Select
+   the package matching your physical board in ESPImageServer’s **Set up display**
+   page. For a release with fewer boards, refer to the included displays instead.
+2. **Included boards**, with the names and native dimensions of the boards
+   actually included.
+3. **Changes since <previous version>**, with the changes for this release.
+4. **Prepared assets**, with the actual ZIP filenames, chip families, and flash
+   sizes.
+
+Do not add a repeated release title, Release readiness, App compatibility,
+Validation and provenance, Notices, or other sections to the GitHub description.
+Keep source/build provenance, credential-free build evidence, hardware results,
+remaining checks, compatibility details, and license notices in repository
+records and the packaged notices as applicable. These records still determine
+publication readiness.
+
+`scripts/prepare_release.py` generates the introduction and board list from the
+validated package set, retains the single `Changes since <major.minor.patch>`
+section from `releases/v<version>.md`, and generates the actual asset list. Legacy
+`Changes` headings remain supported. Other source-note sections stay in the
+repository and are omitted from the generated `release-notes.md` used by the
+publisher. Missing or ambiguous change sections must be corrected before
+preparation succeeds.
+
 ## Local inputs
 
 Compile the desired board manually in ESPImageDisplay. Confirm its target and
@@ -51,17 +106,20 @@ firmware with different bytes under the same version; assign a new version.
    tests actually performed. Retain applicable dependency license notices
    with the release materials.
 2. Prepare the assets, extract each ZIP, and check that ESPImageServer accepts
-   it. Complete the intended physical-board checks. A successful packaging
-   test does not prove flashing, boot, Wi-Fi, or recovery.
+   it. Record the physical-board checks performed and any remaining acceptance
+   checks. Incomplete hardware acceptance keeps the release unpublished while
+   all validated assets are uploaded to its draft. A successful packaging test
+   does not prove flashing, boot, Wi-Fi, or recovery.
 3. Commit and push the documentation, scripts, tests, and reviewed release notes.
    Generated binaries and ZIPs remain outside Git history (`dist/` is ignored).
 4. On the repository's **Releases** page, choose **Draft a new release** and
    create the matching `v<version>` tag. This tag identifies the distribution
    repository revision; it is not automatically the firmware source commit.
 5. Paste the generated `dist/v<version>/release-notes.md` into the description.
-   Attach the ZIPs and `SHA256SUMS.txt`. Save the draft for review. Keep it unpublished when hardware acceptance
-   remains incomplete; do not publish prereleases.
-6. Publish when the listed test status and assets are ready for users.
+   Attach every validated board ZIP and `SHA256SUMS.txt`, and verify the remote
+   filenames, sizes, and hashes before handing off the draft. Keep it unpublished
+   when hardware acceptance remains incomplete; do not publish prereleases.
+6. Publish when the recorded test status and assets are ready for users.
 
 GitHub documents the draft, asset-upload, and publication steps in
 [Managing releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
@@ -97,7 +155,8 @@ python scripts/publish_release.py --version 1.1.4 --publish
 python scripts/publish_release.py --version 1.1.5 --publish
 ```
 
-Omit `--publish` to leave a draft. The uploader uses your configured Git
+Omit `--publish` to create a draft with the full firmware asset set attached.
+This upload is included in a firmware release request. The uploader uses your configured Git
 credential helper, verifies uploaded hashes, and refuses to replace published
 assets. It can resume an incomplete draft if existing asset hashes match.
 It does not compile firmware or publish an ESPImageServer installer.
