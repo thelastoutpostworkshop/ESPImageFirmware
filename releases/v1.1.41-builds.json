@@ -1,0 +1,479 @@
+{
+  "firmware_version": "1.1.41",
+  "observed_at_utc": "2026-10-07T22:54:44.007Z",
+  "firmware_source_commit": "297a4f43ae9299d81ae66a226ad43ee20722a388",
+  "source_checkout_clean_at_packaging": true,
+  "source_firmware_version": "1.1.41",
+  "selected_source_target": "FIRMWARE_TARGET_ESP32_C6_LCD_147",
+  "source_uncommitted_files": [],
+  "provenance_scope": "Accompanying firmware checkout and supplied exports; not a cryptographic source-to-binary attestation.",
+  "credential_free_build_confirmation": {
+    "status": "pending"
+  },
+  "physical_board_acceptance": {
+    "status": "pending",
+    "tested_by_agent": false
+  },
+  "boards": {
+    "JC4827W543": {
+      "board_target": "JC4827W543",
+      "compile_profile": "JC4827W543",
+      "fqbn": "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=dio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=opi,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "firmware_version": "1.1.41",
+      "copied_firmware_target": "FIRMWARE_TARGET_JC4827W543",
+      "copied_firmware_target_h_sha256": "8a23c563bfac0ba7da4bcc67265dd32c5d6a3f17ee7e4a809891cbc59bb9d9c8",
+      "application_filename": "ESPImageDisplay.ino.bin",
+      "application_size": 1279472,
+      "application_modified_utc": "2026-10-07T19:48:01.158Z",
+      "core_package_identities": [
+        "esp32_esp32_3.3.11"
+      ],
+      "compiler_package_identities": [
+        "esp32_esp-x32_2601"
+      ],
+      "library_package_identities": [
+        "esp32_esp32_3.3.11",
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.4.10",
+        "Dev_Device_Pins_0.0.6",
+        "ESP_Async_WebServer_3.11.2",
+        "GFX_Library_for_Arduino_1.6.7",
+        "JPEGDEC_1.8.4",
+        "TAMC_GT911_1.0.2"
+      ],
+      "dependency_files_reference_secrets_h": false,
+      "copied_header_matches_current_source_except_target": true,
+      "header_comparison_normalization": [
+        "target selection",
+        "line endings",
+        "Arduino generated #line directives"
+      ],
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "JC4827W543",
+        "firmware_version": "1.1.41",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32s3",
+        "fqbn": "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=dio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=opi,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 4194304
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x0",
+            "size_bytes": 18720,
+            "sha256": "3ef75dd1e480cfca38a4a1d4cf72a19e802224dbc8cbeddf53727eb38b4743b1"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1279472,
+            "sha256": "e4dd7038ca299a392caa19819aa2f6be3721345c4be621d162fdd6546d866317"
+          }
+        ]
+      },
+      "binary_contains_version_and_expected_board": true
+    },
+    "ST7701_320X820": {
+      "board_target": "ST7701_320X820",
+      "compile_profile": "ESP32-S3-320x820",
+      "fqbn": "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,FlashSize=16M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=opi,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "firmware_version": "1.1.41",
+      "copied_firmware_target": "FIRMWARE_TARGET_ST7701_320X820",
+      "copied_firmware_target_h_sha256": "3267da6b7ead9bd304d8ca35984752ac3305e82516c4ab1f79e73994eb04e395",
+      "application_filename": "ESPImageDisplay.ino.bin",
+      "application_size": 1252752,
+      "application_modified_utc": "2026-10-07T22:50:08.524Z",
+      "core_package_identities": [
+        "esp32_esp32_3.3.12"
+      ],
+      "compiler_package_identities": [
+        "esp32_esp-x32_2601"
+      ],
+      "library_package_identities": [
+        "esp32_esp32_3.3.12",
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.5.0",
+        "Dev_Device_Pins_0.0.6",
+        "ESP_Async_WebServer_3.12.1",
+        "GFX_Library_for_Arduino_1.6.8",
+        "JPEGDEC_1.8.4"
+      ],
+      "dependency_files_reference_secrets_h": false,
+      "copied_header_matches_current_source_except_target": true,
+      "header_comparison_normalization": [
+        "target selection",
+        "line endings",
+        "Arduino generated #line directives"
+      ],
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "ST7701_320X820",
+        "firmware_version": "1.1.41",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32s3",
+        "fqbn": "esp32:esp32:esp32s3:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,FlashSize=16M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=opi,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 16777216
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x0",
+            "size_bytes": 19968,
+            "sha256": "84bb365666003b051f564d04380d0cf5d9d85c420ddafe9fc863071b49e49bfc"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1252752,
+            "sha256": "a19bf291c1c2f08dbe1ed3ac536b6e50ffbeea9514d9c082dfbc1f33819f8c49"
+          }
+        ]
+      },
+      "binary_contains_version_and_expected_board": true
+    },
+    "ESP32_C6_LCD_147": {
+      "board_target": "ESP32_C6_LCD_147",
+      "compile_profile": "ESP32-C6-LCD-1.47",
+      "fqbn": "esp32:esp32:esp32c6:UploadSpeed=921600,CDCOnBoot=cdc,CPUFreq=160,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "firmware_version": "1.1.41",
+      "copied_firmware_target": "FIRMWARE_TARGET_ESP32_C6_LCD_147",
+      "copied_firmware_target_h_sha256": "9613c82791aaaacfdad8bbc966762598bbaeea1836c7fee65601c273a6d6dd17",
+      "application_filename": "ESPImageDisplay.ino.bin",
+      "application_size": 1399152,
+      "application_modified_utc": "2026-10-07T22:52:30.163Z",
+      "core_package_identities": [
+        "esp32_esp32_3.3.11"
+      ],
+      "compiler_package_identities": [
+        "esp32_esp-rv32_2601"
+      ],
+      "library_package_identities": [
+        "esp32_esp32_3.3.11",
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.4.10",
+        "Dev_Device_Pins_0.0.6",
+        "ESP_Async_WebServer_3.11.2",
+        "GFX_Library_for_Arduino_1.6.7",
+        "JPEGDEC_1.8.4"
+      ],
+      "dependency_files_reference_secrets_h": false,
+      "copied_header_matches_current_source_except_target": true,
+      "header_comparison_normalization": [
+        "target selection",
+        "line endings",
+        "Arduino generated #line directives"
+      ],
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "ESP32_C6_LCD_147",
+        "firmware_version": "1.1.41",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32c6",
+        "fqbn": "esp32:esp32:esp32c6:UploadSpeed=921600,CDCOnBoot=cdc,CPUFreq=160,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 4194304
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x0",
+            "size_bytes": 20720,
+            "sha256": "02f53243e1ded001d79f109e938846d72bd85a91bee7a3513e4094d7c090975c"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1399152,
+            "sha256": "8829f7dcb98f96c3ba6317961a55fa42c13d197ae8a866f474c3323c75262774"
+          }
+        ]
+      },
+      "binary_contains_version_and_expected_board": true
+    },
+    "CHEAP_YELLOW_DISPLAY": {
+      "board_target": "CHEAP_YELLOW_DISPLAY",
+      "compile_profile": "CheapYellowDisplay",
+      "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "firmware_version": "1.1.41",
+      "copied_firmware_target": "FIRMWARE_TARGET_CHEAP_YELLOW_DISPLAY",
+      "copied_firmware_target_h_sha256": "3045a668f220ff14c81067efe206399fd523a006be86ed6c4de0405004277443",
+      "application_filename": "ESPImageDisplay.ino.bin",
+      "application_size": 1267344,
+      "application_modified_utc": "2026-10-07T22:37:53.413Z",
+      "core_package_identities": [
+        "esp32_esp32_3.3.11"
+      ],
+      "compiler_package_identities": [
+        "esp32_esp-x32_2601"
+      ],
+      "library_package_identities": [
+        "esp32_esp32_3.3.11",
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.4.10",
+        "ESP_Async_WebServer_3.11.2",
+        "GFX_Library_for_Arduino_1.6.7",
+        "JPEGDEC_1.8.4"
+      ],
+      "dependency_files_reference_secrets_h": false,
+      "copied_header_matches_current_source_except_target": true,
+      "header_comparison_normalization": [
+        "target selection",
+        "line endings",
+        "Arduino generated #line directives"
+      ],
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "CHEAP_YELLOW_DISPLAY",
+        "firmware_version": "1.1.41",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32",
+        "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 4194304
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x1000",
+            "size_bytes": 24992,
+            "sha256": "427f96e10c620c4f062dab15da54fc45494d897e8397ae6f3aecc98c42d7e379"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1267344,
+            "sha256": "57d081150de359678b2df78cf65fe9a472e3030016e9803bab0b28cba2c8dbe5"
+          }
+        ]
+      },
+      "binary_contains_version_and_expected_board": true
+    },
+    "ESP32_S3_AMOLED_143": {
+      "board_target": "ESP32_S3_AMOLED_143",
+      "compile_profile": "ESP32-S3-AMOLED-1.43",
+      "fqbn": "esp32:esp32:waveshare_esp32_s3_touch_amoled_143:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,PartitionScheme=app3M_fat9M_16MB,DebugLevel=none,PSRAM=enabled,LoopCore=1,EventsCore=1,EraseFlash=none",
+      "firmware_version": "1.1.41",
+      "copied_firmware_target": "FIRMWARE_TARGET_ESP32_S3_AMOLED_143",
+      "copied_firmware_target_h_sha256": "337b86bf9d6266bf34f576b5bbce846437a9522d4404823a8b4ca75522413dd9",
+      "application_filename": "ESPImageDisplay.ino.bin",
+      "application_size": 1263760,
+      "application_modified_utc": "2026-10-07T22:41:09.933Z",
+      "core_package_identities": [
+        "esp32_esp32_3.3.12"
+      ],
+      "compiler_package_identities": [
+        "esp32_esp-x32_2601"
+      ],
+      "library_package_identities": [
+        "esp32_esp32_3.3.12",
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.5.0",
+        "Dev_Device_Pins_0.0.6",
+        "ESP_Async_WebServer_3.12.1",
+        "GFX_Library_for_Arduino_1.6.8",
+        "JPEGDEC_1.8.4"
+      ],
+      "dependency_files_reference_secrets_h": false,
+      "copied_header_matches_current_source_except_target": true,
+      "header_comparison_normalization": [
+        "target selection",
+        "line endings",
+        "Arduino generated #line directives"
+      ],
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "ESP32_S3_AMOLED_143",
+        "firmware_version": "1.1.41",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32s3",
+        "fqbn": "esp32:esp32:waveshare_esp32_s3_touch_amoled_143:UploadSpeed=921600,USBMode=hwcdc,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,CPUFreq=240,FlashMode=qio,PartitionScheme=app3M_fat9M_16MB,DebugLevel=none,PSRAM=enabled,LoopCore=1,EventsCore=1,EraseFlash=none",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 16777216
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x0",
+            "size_bytes": 19968,
+            "sha256": "84bb365666003b051f564d04380d0cf5d9d85c420ddafe9fc863071b49e49bfc"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "ace02503447d0f470692e65fa76002f2d77a92dc81cd3813d8aa66718d716da9"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1263760,
+            "sha256": "4d5eca4464d69668e1b149e723a50111efa6b3407a37a365431fff56221b13ae"
+          }
+        ]
+      },
+      "binary_contains_version_and_expected_board": true
+    }
+  },
+  "verification_performed": [
+    "Read source version, selected target, git commit and worktree status.",
+    "Read each copied FirmwareTarget.h, build FQBN, package paths, application sizes and modification times.",
+    "Hashed each copied FirmwareTarget.h and compared it with current source allowing target selection, line-ending differences and Arduino-generated #line directives.",
+    "Checked dependency files for the filename secrets.h using a boolean result only.",
+    "All five application binaries contain the expected firmware version and board identifier (boolean checks only).",
+    "All five exports passed package-firmware.ps1 validation.",
+    "All five ZIPs passed release preparation validation and extracted packages passed the desktop firmware validator.",
+    "Firmware distribution tooling unittest suite: 13 tests passed with mocked GitHub interactions."
+  ],
+  "verification_limits": [
+    "Build metadata does not independently record the firmware source commit used at compilation.",
+    "Absence of secrets.h dependency references does not prove credential-free binaries.",
+    "No secrets.h contents, arbitrary compiler flags, or credential strings were read or exposed.",
+    "No firmware compilation, linking, flashing, or hardware testing was performed."
+  ],
+  "release_packages": [
+    {
+      "board_target": "JC4827W543",
+      "firmware_version": "1.1.41",
+      "chip": "esp32s3",
+      "segments": 4,
+      "zip_sha256": "0627c0ff0b977f021d7ac1901c46c1fd98a2dc4afc415b42be7293abaad03dd6",
+      "manifest_fingerprint": "6315aa4b3d0b74a4f6645ba96b3b8b319d770514c525ef3dd6058170f06a4d0e"
+    },
+    {
+      "board_target": "ST7701_320X820",
+      "firmware_version": "1.1.41",
+      "chip": "esp32s3",
+      "segments": 4,
+      "zip_sha256": "2a1e9f2b0b85194b655862e92e1d2cdbfbf538401568d03d2ac71c1cc628535c",
+      "manifest_fingerprint": "ec9c5c948c0638f37e12a2fb16c7a0cf19cea65c503d793f36e94c8d29aa37f7"
+    },
+    {
+      "board_target": "ESP32_C6_LCD_147",
+      "firmware_version": "1.1.41",
+      "chip": "esp32c6",
+      "segments": 4,
+      "zip_sha256": "9073b05e442f84b9e16260652617d573c888c7410acba12b0a28b276577cc30c",
+      "manifest_fingerprint": "b1a764c2643578480ed187a857995b647c54b3817f47103dd8d2b2008e9fd460"
+    },
+    {
+      "board_target": "CHEAP_YELLOW_DISPLAY",
+      "firmware_version": "1.1.41",
+      "chip": "esp32",
+      "segments": 4,
+      "zip_sha256": "365b803157decd552cd6a55b6e4447c02294f5c4ebe4cdf0a2706bc9c6df1f71",
+      "manifest_fingerprint": "835a4d1dd652912991021b2e28c84d778a7852ad390ea3f4efb13ec1ca547d41"
+    },
+    {
+      "board_target": "ESP32_S3_AMOLED_143",
+      "firmware_version": "1.1.41",
+      "chip": "esp32s3",
+      "segments": 4,
+      "zip_sha256": "42b66533cb66876ba36983d05b0a3c97fc5a86b87444652696566c5f529f848b",
+      "manifest_fingerprint": "b5beb9e2c408617192169a4cd592566e4a6c7c7c0c05dca08ebe830bca1a21a5"
+    }
+  ],
+  "release_materials_upload_authorized_on": "2026-10-07",
+  "release_recreation_requested_on": "2026-10-08"
+}
