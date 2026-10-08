@@ -474,5 +474,6 @@
       "manifest_fingerprint": "b5beb9e2c408617192169a4cd592566e4a6c7c7c0c05dca08ebe830bca1a21a5"
     }
   ],
-  "release_materials_upload_authorized_on": "2026-10-07"
+  "release_materials_upload_authorized_on": "2026-10-07",
+  "release_recreation_requested_on": "2026-10-08"
 }
