@@ -127,6 +127,8 @@ The local preparation command does not create commits, tags, drafts, or uploads.
 
 ## Current preparation
 
+- **1.1.42:** ESP32-C6 LCD 1.47 only; 32 KiB MJPEG buffer for boards without PSRAM. Validated release package and maintainer-confirmed hardware acceptance. Source/export evidence supports the USB/NVS credential path; verification limits are recorded in `releases/v1.1.42.md` and `releases/v1.1.42-builds.json`. Other boards retain their published 1.1.41 packages.
+
 - **1.1.39:** All five boards; explicit board identity in network registration. Maintainer-confirmed credential-free builds and hardware readiness. See `releases/v1.1.39.md` and `releases/v1.1.39-builds.json`.
 
 - **1.1.38:** All five supported boards; maintainer-confirmed credential-free release builds. See `releases/v1.1.38.md` and `releases/v1.1.38-builds.json`.

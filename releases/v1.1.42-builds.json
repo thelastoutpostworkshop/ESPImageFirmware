@@ -1,0 +1,153 @@
+{
+  "firmware_version": "1.1.42",
+  "observed_at_utc": "2026-10-10T10:51:30.420357+00:00",
+  "firmware_source_commit": "24413ef586e8d91a6e1dc74d0ddabffdbf986350",
+  "source_checkout_clean_at_packaging": true,
+  "source_firmware_version": "1.1.42",
+  "selected_source_target": "FIRMWARE_TARGET_ESP32_C6_LCD_147",
+  "source_uncommitted_files": [],
+  "provenance_scope": "Supplied manual build and copied source compared with the clean checkout; not a cryptographic source-to-binary attestation.",
+  "credential_free_build_evidence": {
+    "status": "supported_by_source_and_export_evidence",
+    "configuration_path": "Wi-Fi credentials supplied through USB and stored on the device in NVS; source defaults are empty.",
+    "copied_credential_files_match_source": true,
+    "dependency_files_checked": 403,
+    "dependency_files_reference_secrets_h": false,
+    "compile_translation_units_checked": 231,
+    "compile_entries_reference_secrets_h": false,
+    "copied_sketch_source_header_files_checked": 68,
+    "copied_sources_include_secrets_h": false,
+    "normalized_credential_source_sha256": {
+      "AppConfig.cpp": "5e478bbcab64112e6f875f918ebc40c96a14067dfcfc895069a03d2816ae9a40",
+      "AppConfig.h": "6d651627fb4f9350edd78cca6f1aea6c0c437a7092bf3668d6f36c3cefeb6291",
+      "USBWifi.cpp": "addd6a9ceb8c9b15e0c1673ae86ad8504486d5ebad8105fa7180b57ce527e45c",
+      "USBWifi.h": "fe718c069cba28cbf87eb577679d9d6c0576a4fdd9c6d0d618afa34fb6fe7ade",
+      "USBIdentification.cpp": "8e82bd690efef367f17044d3588582bbf95fde9903f0fd2dd70b5665ac7cf9e1",
+      "USBIdentification.h": "4d5e8258347e1a49198c76279b7f17d1a20dddbe61042e40bc4ef5b4eaac6314"
+    }
+  },
+  "physical_board_acceptance": {
+    "status": "maintainer_confirmed_passed",
+    "confirmed_on": "2026-10-10",
+    "confirmation": "Yes, this build passed hardware testing",
+    "confirmation_question": "Has this C6 1.1.42 build passed testing on the board, including SD video playback and continued communication with the app?",
+    "tested_by_agent": false,
+    "scope": "Current C6 build; no additional individual physical test results were supplied."
+  },
+  "boards": {
+    "ESP32_C6_LCD_147": {
+      "board_target": "ESP32_C6_LCD_147",
+      "compile_profile": "ESP32-C6-LCD-1.47",
+      "fqbn": "esp32:esp32:esp32c6:UploadSpeed=921600,CDCOnBoot=cdc,CPUFreq=160,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "firmware_version": "1.1.42",
+      "copied_firmware_target": "FIRMWARE_TARGET_ESP32_C6_LCD_147",
+      "copied_firmware_target_h_sha256": "1294a71aada43df5abdd3b86ff1f922cceddcfa1b94ff851e45ece21a1c7c43c",
+      "copied_root_cpp_header_files_matching_source": 63,
+      "generated_sketch_preserves_all_source_lines": true,
+      "source_comparison_normalization": [
+        "line endings",
+        "Arduino-generated #line directives",
+        "generated sketch includes and prototypes"
+      ],
+      "mjpeg_frame_buffer_bytes": 32768,
+      "application_filename": "ESPImageDisplay.ino.bin",
+      "application_size": 1399088,
+      "application_modified_utc": "2026-10-09T19:55:19.301058+00:00",
+      "binary_contains_version_and_expected_board": true,
+      "binary_contains_previous_version": false,
+      "core_package_identities": [
+        "esp32_esp32_3.3.11"
+      ],
+      "compiler_package_identities": [
+        "esp32_esp-rv32_2601"
+      ],
+      "compiler_version": "esp-14.2.0_20260121; GCC 14.2.0",
+      "sdk_package_identity": "esp32c6-libs_3.3.11_9d04b3923bf88409",
+      "library_package_identities": [
+        "esp32_esp32_3.3.11",
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.4.10",
+        "Dev_Device_Pins_0.0.6",
+        "ESP_Async_WebServer_3.11.2",
+        "GFX_Library_for_Arduino_1.6.7",
+        "JPEGDEC_1.8.4"
+      ],
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "ESP32_C6_LCD_147",
+        "firmware_version": "1.1.42",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32c6",
+        "fqbn": "esp32:esp32:esp32c6:UploadSpeed=921600,CDCOnBoot=cdc,CPUFreq=160,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 4194304
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x0",
+            "size_bytes": 20720,
+            "sha256": "02f53243e1ded001d79f109e938846d72bd85a91bee7a3513e4094d7c090975c"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1399088,
+            "sha256": "4faad2f9c0a2e39d28bb3fd91f36c3742ff45e8aa842e9688fad3d40e65e29d4"
+          }
+        ]
+      }
+    }
+  },
+  "verification_performed": [
+    "Read compiled target/version, source commit, clean status and copied-source correspondence.",
+    "Copied only four flash_args binaries plus flash_args/build.options.json unchanged into a separate board/version folder.",
+    "package-firmware.ps1 generated a manifest from actual exported offsets and flash settings.",
+    "Release preparation passed chip-header, offset, erase-sector overlap, flash-capacity, application-partition-fit and SHA-256 checks.",
+    "Local package and extracted release ZIP passed the actual desktop firmware validator.",
+    "ZIP contains exactly the four binaries, cleaned manifest and unmodified project license with retained notices.",
+    "Distribution tooling unittest suite: 16 passed using fixture packages and mocked GitHub interactions."
+  ],
+  "verification_limits": [
+    "Build metadata does not independently record the source commit at compilation.",
+    "Source/dependency correspondence and embedded identity checks are evidence, not cryptographic source-to-binary or credential-free attestation.",
+    "No secrets.h contents or credential values were read or exposed.",
+    "No firmware compilation, linking, flashing or hardware testing was performed by the agent; hardware acceptance was reported by the maintainer."
+  ],
+  "release_packages": [
+    {
+      "board_target": "ESP32_C6_LCD_147",
+      "firmware_version": "1.1.42",
+      "chip": "esp32c6",
+      "segments": 4,
+      "zip_name": "ESPImageDisplay-ESP32_C6_LCD_147-1.1.42.zip",
+      "zip_size": 872236,
+      "zip_sha256": "c08947cdb6eac31117c22f93e8b4e05b43c7314a1bc4f978300c1280ab4ab496",
+      "manifest_fingerprint": "47d4ae25c6b7956bb21fe3874bd436baccd2889ccf61844a4b3f4f19e39a6381",
+      "desktop_validation": "passed"
+    }
+  ],
+  "publication_requested_on": "2026-10-10",
+  "release_scope": "Only ESP32_C6_LCD_147; other boards retain published 1.1.41 packages."
+}
