@@ -1,0 +1,751 @@
+{
+  "firmware_version": "1.1.43",
+  "observed_at_utc": "2026-10-12T17:05:12.493781+00:00",
+  "firmware_source_commit": "ea82ba67b6d7db3a2acc465f45658be4108575e1",
+  "source_checkout_clean_at_packaging": true,
+  "source_uncommitted_files": [],
+  "release_scope": "Only CHEAP_YELLOW_DISPLAY; C6 remains at 1.1.42, other boards at 1.1.41.",
+  "provenance_scope": "Supplied manual export compared with current clean source and copied build inputs; no cryptographic source-to-binary attestation.",
+  "credential_free_build_evidence": {
+    "status": "supported_by_source_and_export_evidence",
+    "configuration_path": "Wi-Fi credentials supplied at runtime through USB and stored in device NVS; initial credentials are empty.",
+    "checks": {
+      "secrets_h_read": false,
+      "dependency_secrets_h_reference": false,
+      "compile_commands_secrets_h_reference": false,
+      "compile_commands_known_credential_define_reference": false,
+      "build_options_secrets_h_reference": false,
+      "includes_cache_secrets_h_reference": false,
+      "libraries_cache_secrets_h_reference": false,
+      "copied_source_secrets_h_include": false,
+      "ssid_default_empty": true,
+      "password_default_empty": true,
+      "app_config_matches_source": true,
+      "usb_wifi_matches_source": true,
+      "credentials_supplied_at_runtime_and_saved_after_usb_connection": true,
+      "app_config_uses_nvs_blob_writes": true,
+      "app_config_commits_nvs": true
+    },
+    "dependency_files_checked": 403,
+    "compile_translation_units_checked": 231,
+    "fresh_application_export": true,
+    "all_objects_rebuilt": false,
+    "reused_object_evidence": "Unchanged USBWifi.cpp.o predates the application export; copied source matches the clean checkout and no secrets.h dependency was found."
+  },
+  "physical_board_acceptance": {
+    "status": "maintainer_confirmed_passed",
+    "confirmed_on": "2026-10-12",
+    "confirmation": "Yes, all passed",
+    "confirmation_question": "Has this CYD 1.1.43 build passed hardware testing, including boot/app connection, SD media playback and saving, and offline/recovery behavior?",
+    "scope": "CYD 1.1.43: boot/app connection, SD media playback and saving, offline/recovery behavior.",
+    "color_evidence": "Maintainer-reported huge improvement plus visual review of IMG_7991.MOV sampled normal-media frames using the same gamma setup.",
+    "tested_by_agent": false
+  },
+  "boards": {
+    "CHEAP_YELLOW_DISPLAY": {
+      "board_target": "CHEAP_YELLOW_DISPLAY",
+      "compile_profile": "CheapYellowDisplay",
+      "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "firmware_version": "1.1.43",
+      "compiled_configuration": {
+        "board_target": "CHEAP_YELLOW_DISPLAY",
+        "firmware_version": "1.1.43",
+        "explicit_gamma": 1,
+        "color_diagnostics": 0,
+        "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "profile": "CheapYellowDisplay"
+      },
+      "toolchain": {
+        "arduino_esp32": "3.3.11",
+        "compiler": "GCC 14.2.0",
+        "compiler_report": "xtensa-esp-elf-g++.exe (crosstool-NG esp-14.2.0_20260121) 14.2.0",
+        "libraries": {
+          "GFX Library for Arduino": "1.6.7",
+          "JPEGDEC": "1.8.4",
+          "ArduinoJson": "7.4.3",
+          "Async TCP": "3.4.10",
+          "ESP Async WebServer": "3.11.2"
+        }
+      },
+      "build_package_identities": [
+        "ArduinoJson_7.4.3",
+        "Async_TCP_3.4.10",
+        "ESP_Async_WebServer_3.11.2",
+        "GFX_Library_for_Arduino_1.6.7",
+        "JPEGDEC_1.8.4",
+        "esp32_esp-x32_2601",
+        "esp32_esp32-libs_3.3.11",
+        "esp32_esp32_3.3.11"
+      ],
+      "application_sha256": "19097d428a10be0094644f77778005216224be446e8f7699e5e172b7e6639782",
+      "build_timestamps_utc": {
+        "ESPImageDisplay.ino.bin": "2026-10-12T16:56:39.210007+00:00",
+        "sketch/ESPImageDisplay.ino.cpp.o": "2026-10-12T16:56:32.536564+00:00",
+        "sketch/AppConfig.cpp.o": "2026-10-12T16:56:30.976328+00:00",
+        "sketch/USBWifi.cpp.o": "2026-10-12T16:15:43.699456+00:00",
+        "sketch/CheapYellowDisplay.cpp.o": "2026-10-12T16:56:31.892058+00:00",
+        "sketch/FirmwareTarget.h": "2026-10-12T16:56:21.742091+00:00"
+      },
+      "copied_source_count": 69,
+      "all_copied_sources_match": true,
+      "manifest": {
+        "schema_version": 1,
+        "package_type": "esp-image-display-firmware",
+        "installation_type": "first_install",
+        "board_target": "CHEAP_YELLOW_DISPLAY",
+        "firmware_version": "1.1.43",
+        "release_notes": "",
+        "identity_source": "publisher_declared",
+        "chip": "esp32",
+        "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+        "flash": {
+          "mode": "dio",
+          "frequency": "80m",
+          "size_bytes": 4194304
+        },
+        "segments": [
+          {
+            "role": "bootloader",
+            "file": "ESPImageDisplay.ino.bootloader.bin",
+            "offset": "0x1000",
+            "size_bytes": 24992,
+            "sha256": "427f96e10c620c4f062dab15da54fc45494d897e8397ae6f3aecc98c42d7e379"
+          },
+          {
+            "role": "partition_table",
+            "file": "ESPImageDisplay.ino.partitions.bin",
+            "offset": "0x8000",
+            "size_bytes": 3072,
+            "sha256": "aaae2888c5a6a348004b5b436f47abb25ae32e72d9003902955a998eda723edd"
+          },
+          {
+            "role": "ota_data",
+            "file": "boot_app0.bin",
+            "offset": "0xe000",
+            "size_bytes": 8192,
+            "sha256": "f94c5d786a7a8fab06ac5d10e33bf37711a6697636dc037559ea19cc410a17f0"
+          },
+          {
+            "role": "application",
+            "file": "ESPImageDisplay.ino.bin",
+            "offset": "0x10000",
+            "size_bytes": 1267520,
+            "sha256": "19097d428a10be0094644f77778005216224be446e8f7699e5e172b7e6639782"
+          }
+        ]
+      }
+    }
+  },
+  "source_build_audit": {
+    "schema_version": 1,
+    "audit_kind": "read-only-source-build-provenance",
+    "source_commit": "ea82ba67b6d7db3a2acc465f45658be4108575e1",
+    "tracked_source_worktree_clean": true,
+    "export_directory_relative_to_firmware_repository": "build/build_CheapYellowDisplay",
+    "compiled_configuration": {
+      "board_target": "CHEAP_YELLOW_DISPLAY",
+      "firmware_version": "1.1.43",
+      "explicit_gamma": 1,
+      "color_diagnostics": 0,
+      "fqbn": "esp32:esp32:esp32:UploadSpeed=921600,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=huge_app,DebugLevel=none,PSRAM=disabled,LoopCore=1,EventsCore=1,EraseFlash=none,JTAGAdapter=default,ZigbeeMode=default",
+      "profile": "CheapYellowDisplay"
+    },
+    "source_comparison": {
+      "normalization": "CRLF to LF, remove #line/compiler numeric line directives, trim trailing whitespace and outer blank lines; generated .ino header/prototypes checked separately",
+      "copied_c_cpp_header_count": 69,
+      "all_normalized_equal": true,
+      "files": [
+        {
+          "filename": "Amoled143Display.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "01d773f41369c6841d55b0021806822268d972c7b38811ea6e1e1c649f0f94ba",
+          "copied_normalized_sha256": "94d2281152ed60033354f82538cb8c7a0d336c9f3b96b9ff71e6de3b06ce2d21"
+        },
+        {
+          "filename": "Amoled143Display.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "41ec004766019e6d409f621e1f31c6d70de4397c947d33b09e0df70bdf2ce1bb",
+          "copied_normalized_sha256": "e5780618f8e632cfbd31aeee68285b43b3450c39ee99b3b98e62335103760289"
+        },
+        {
+          "filename": "Amoled143Touch.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "d4887edfa49726af635f5f04dd987f8d458eefbb1a85ff485bfd3286f8ab943a",
+          "copied_normalized_sha256": "399599bee4e1cffbd809115c2d702b8a57b7fc998afca07ce3915f5e3dcc5d49"
+        },
+        {
+          "filename": "Amoled143Touch.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "1db3928c1df98102331cdb6c2d0c2d40a2aa4d6da590cf857f9e8f485bddf460",
+          "copied_normalized_sha256": "6f64d554bd1e440f8ce7a82f23ffa4b5f3ae6642d48ab8773ef68def769a4bc2"
+        },
+        {
+          "filename": "AmoledBoardConfig.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "65b31599dda1d82a5e2ec3aacb3fb40c20243963602ad9d3ef64591a4dd35f51",
+          "copied_normalized_sha256": "897f31ad80feb1a7a26697c478297ba214c8511b3aedf92146335387e0654745"
+        },
+        {
+          "filename": "AmoledJpegStrips.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "32485f4e14ec51a5aebafdb24057e8b93c4b06d093f6dd4a88edfec7335d870c",
+          "copied_normalized_sha256": "9c13b67111d6bfcafa0af4d1dac85312a016f3642fecb95ca93a394be02f2446"
+        },
+        {
+          "filename": "AmoledPanel.c",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "476be1f0efaf2ea527dcb1590889cde4173eb0070840ea936f84049a7fdd26c8",
+          "copied_normalized_sha256": "619d31c0fab783f1ff5999cb6c9a2931a1a52ce33272bce4d981e2701060b2fc"
+        },
+        {
+          "filename": "AmoledPanel.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "75aa7b3f07d6e11dc4e899465cb3790ca7178bc8be1bcd4213c8689be9d76b9b",
+          "copied_normalized_sha256": "863c07fd26523f70373d796d24c44cc3ef652edfefd82ee98af31c11daa9f85a"
+        },
+        {
+          "filename": "AppConfig.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "96610e749d9603f6f57b315bb7bcefe936db509c7e741cab09230ade20972f14",
+          "copied_normalized_sha256": "5e478bbcab64112e6f875f918ebc40c96a14067dfcfc895069a03d2816ae9a40"
+        },
+        {
+          "filename": "AppConfig.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "e3749b9311cc5e0600e60cd9035811e07e3bbe1df42c358734ad6db7650d3aa0",
+          "copied_normalized_sha256": "6d651627fb4f9350edd78cca6f1aea6c0c437a7092bf3668d6f36c3cefeb6291"
+        },
+        {
+          "filename": "BufferedMediaInput.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "7d5a0d46d98943bd3d288e57b21d3bab4fc136cedfb1fbf6e469404678aefaf7",
+          "copied_normalized_sha256": "c06f2be984b2efbb85e9cc619db3961cfe555baa43c645e03456e7960e14a3ce"
+        },
+        {
+          "filename": "CheapYellowDisplay.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "1df0dbd94ab6da01548b3b8b03a7e0d2383b176c535fa27aacecfacb0448a888",
+          "copied_normalized_sha256": "1bb8b2c68d8c86da370ee237691fe2379af34cf8948c868c640d6995ab54d04b"
+        },
+        {
+          "filename": "CheapYellowDisplay.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "e8e0e99413be14cb7c6c543b3f814d6896cbccdefbcebeb3982459de23cb581e",
+          "copied_normalized_sha256": "0833e1553f662344157c316fd6fd455e23012547d4c21d565c7740143ebc2fb5"
+        },
+        {
+          "filename": "ControlHttp.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "520e19ad9170344beb7d0a0e19440f8cda9915f2c88e29051699baa97240b8d1",
+          "copied_normalized_sha256": "dadd3b12f1158debfd87015db23e4b07f52a7fa2f0a9ef5b4139d57890c3e545"
+        },
+        {
+          "filename": "ControlHttp.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "233d245a14965ed7a336750d387304a10e12755ebdee8ea04bf3a5473fa212ed",
+          "copied_normalized_sha256": "21afa7768383b698bca7e3a27cc21656fdf8d4a5d1413e53b4aa7403d01b86c9"
+        },
+        {
+          "filename": "CydColorChart.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "1a478161257baa27c3f361501532e92bb2f16450deaafed09fd64ff3f52b85f9",
+          "copied_normalized_sha256": "9e4860def68acfd958f62207f06e0f6b6fd339e10c16f67cf294b1ccd0099a4f"
+        },
+        {
+          "filename": "Display.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "e6b1e84a3ff962a4d111652f1b52a6635c8c055d9dbc2c3dad9290ced3907a1e",
+          "copied_normalized_sha256": "0e2e41f769569a282337684e2aedcc3ad112c20e4388162c3598994d15430585"
+        },
+        {
+          "filename": "DisplayContentState.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "f8c01ed1cae547fcd6a678e182637d64e628b20314733beea378311a10dbae25",
+          "copied_normalized_sha256": "81e80bd982caaabbf030e5816265e7670b3d36736103828f243e4caadfafbfd9"
+        },
+        {
+          "filename": "ESP32C6LCD147Display.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "dc03548ec533edfef2ad1a385c584b2bd3bf40ef966d8b811c1feae730c0eb53",
+          "copied_normalized_sha256": "a5c82d7ed586038c2ceecaac83a6a9cda98c4dd11063dd25459c63c36d80bc68"
+        },
+        {
+          "filename": "ESP32C6LCD147Display.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "70cc2124cab64985ca6f4cf6c9e644b26eb3d063559b244d9a5865c464890997",
+          "copied_normalized_sha256": "56e15116af9e2ae3288f800ee1abe4e626ca6d143c94f9f9ee09cdf8cbad6041"
+        },
+        {
+          "filename": "esp_io_expander.c",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "6d1febf3ff9a6a5f7aaf9bfbf656e81bda8d34e8d70f918638a3f350942acc9f",
+          "copied_normalized_sha256": "8e21aa87fdfa204a12449d5d3df616b7270f50d4d32d023cde61bf94b3a86537"
+        },
+        {
+          "filename": "esp_io_expander.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c10f9f1c5fcff9ef520617eb0425daff35bd5084f67b50774b2988e56acd87a3",
+          "copied_normalized_sha256": "492ae7a689d9e50c7ce9e9eda9ea8fea0d07e32d82cafbbdc5871177dfe1caf8"
+        },
+        {
+          "filename": "esp_lcd_panel_io_3wire_spi.c",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c0ae81e1876f65b1d7d11d7e782e745b9d354476449d97f328451b8d7e6a8716",
+          "copied_normalized_sha256": "655dd0b4e7eb0e7b5f2292727068f6b3d6fe4e5ff1b248c102d9b38f53aafa64"
+        },
+        {
+          "filename": "esp_lcd_panel_io_additions.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "96dbdcc51345b5a385a2ff5920dc55e033881a75e4597f90c02f379977fa4015",
+          "copied_normalized_sha256": "cf86c8cf03adedb1830a0456f135f1f041ffc0c1492e197bdb3c06aa5cf58f46"
+        },
+        {
+          "filename": "esp_lcd_st7701.c",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "af321fe912a38d000e2c0e3ea4fcec02de0cd41b75490fee81ce0ef60b1beae5",
+          "copied_normalized_sha256": "07c103d0069063d62334d298fded564bd9ac8ee29cce9f2e69813d0ae47269f5"
+        },
+        {
+          "filename": "esp_lcd_st7701.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "b5afb6c50dd2e874c93374ff79cc6f7746c245c184a6816201fcc58a9a52d5df",
+          "copied_normalized_sha256": "e095e71f8bf2d2a08da958ea9f9888945a1e1c28d50986ffada741c2c34cfb8c"
+        },
+        {
+          "filename": "esp_lcd_st7701_interface.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "0955316e49124729c2f1e447ae805448cf63ce9c7d1b6740477d8ee15673f0db",
+          "copied_normalized_sha256": "aae70a54994b6963f6b9e432b4ea53a5a414448c072734f580caa3b3c0181a62"
+        },
+        {
+          "filename": "esp_lcd_st7701_rgb.c",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "e3de86f689c60643af51f374e8b96d304a18933a154b6285bf218a88d022b3a5",
+          "copied_normalized_sha256": "268d192f5c74aee046334feeb0678bba31964c8aa68dd64282fe044199b8a326"
+        },
+        {
+          "filename": "ESPImageServerClient.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "5d6ce3a5500807933ad30a2ead95511e2ffff12c47a213d2136eba28905753e2",
+          "copied_normalized_sha256": "7b7505f59f557917225ef4089d8674695122d974747b03ab7143a0b584354c2a"
+        },
+        {
+          "filename": "ESPImageServerClient.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c7ad30a15f5518ccfd9d00b42bf9c8089534bd9f3b08efb836a98a8315f1099d",
+          "copied_normalized_sha256": "b2b970539d9b3d7a718a3b07112cbd3530843c34e643aaafe5d66e9197ce0ffc"
+        },
+        {
+          "filename": "FirmwareTarget.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "81dcc9ccf99e7a4513558d7696d4b1530b73900289020cc6d980b39ab7a3037d",
+          "copied_normalized_sha256": "9b48a436d9534bef15391ebd12513210a0a961024958730919bdb22ac119b60c"
+        },
+        {
+          "filename": "JC4827W543Display.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "bd0565dae5c5fa74d5c49debf86378b5425c1acd08f916cfe71c773fbc9e7a09",
+          "copied_normalized_sha256": "d35fd279076ab18bd118e7b36052101b5651563b07dc5b250d1e30d0e8cdd476"
+        },
+        {
+          "filename": "JC4827W543Display.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c94dc7d7fd1c51cc8e52a6b825710fd5bd24d05b25a5b8ac485a5a1a9ff0291c",
+          "copied_normalized_sha256": "b0ca574318f9a12987f78adfa8e9e590dedc5af3728b32089cf733b2ac961739"
+        },
+        {
+          "filename": "JC4827W543Touch.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "8f86b176319884cf7c9a1eae0953a0d2141d96a540a02b67582429831f577f07",
+          "copied_normalized_sha256": "0b5126038e983f255a5f4db6be7f162d959e422d39b3f33f23c1038700b8101b"
+        },
+        {
+          "filename": "JC4827W543Touch.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "a4e29a550170e516b5fa89841ee80324429210d2e5d52015da93446bbf3dcc27",
+          "copied_normalized_sha256": "f1dfc85adabfd5a0df229e375c5a72539549294375e24d27815bb17064ec97c6"
+        },
+        {
+          "filename": "JCQueuedTransfer.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "7aa9ee33013f776996a54f0257b5cef39399f2f51eab1c854eea7b280a20d416",
+          "copied_normalized_sha256": "2c267dcfc0dd29a39f0c85346ca84d8edc128ccc7b7cdc9e48ec73279ca19bd0"
+        },
+        {
+          "filename": "JCQueuedTransfer.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "637e14f2c955fbf24f74afbed63593b6b3b8cd6b6f06a764f9ad6a6bc81a5419",
+          "copied_normalized_sha256": "645c790b4bb2127093e59e8287cad97e2d89acd90dacf3856efb2426c0612214"
+        },
+        {
+          "filename": "JpegBlockClip.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "7202ff40ded6b7d202c2393a268bd547aebe9d28ca206be089fe09786b707796",
+          "copied_normalized_sha256": "66087dc881035450c02858c2195a9a85553dfe31e6ee0159b0cb725aef490540"
+        },
+        {
+          "filename": "JpegFrameCoverage.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "5e093aadbd5a507e4d4b58ecceeffcf75608f3393e5373faddc8564f512d061e",
+          "copied_normalized_sha256": "273bd7ffe3adb6a38ca254b48cd152d91ead422382517187b8081daba9707110"
+        },
+        {
+          "filename": "MediaDownload.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "a42ff9c9e173a8b9da03f8abbd33bfd2144adb33191e842c23da56f84b821f5a",
+          "copied_normalized_sha256": "5c2ae827e79b35e81df997e00d40663f3a8286964b85e19f7b5c3bc32ec4a1ac"
+        },
+        {
+          "filename": "MediaDownload.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "1b543ed48f6dba53210c51eaf41b2c13df503b9d46c4bc78aa78bed062c1573f",
+          "copied_normalized_sha256": "34532f0a6530e81ca69cee33eab12287cfad4e3b79cda7b2b57665d27e0c9b8f"
+        },
+        {
+          "filename": "MediaOrder.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "7e3b935901997b570ee6c78a2b67578b62570fa1bbf07ffb751ff2bfb32f0d18",
+          "copied_normalized_sha256": "9a5d3ba207a5c6d4edd0744c69191174d341b08bd23dd94fc0d41de1989e45e1"
+        },
+        {
+          "filename": "MediaSave.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "a9a759d8a7eaabb69a877e0959452e9ad4343c6bb6a223a1b97b3a86cf147e00",
+          "copied_normalized_sha256": "85e92efd960a397e78f131eed8724e80935047d676fc97f0ac4e2f06ed6430d0"
+        },
+        {
+          "filename": "MjpegFrameState.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "bcea2837f808542bb4dc47ca532a9c76883a6dc8a2d4f5b6e03a650927efb206",
+          "copied_normalized_sha256": "3a4f9da8ae0bce7294f9dc03bdf396e44e7820edf27edf06f077f81235f4254e"
+        },
+        {
+          "filename": "MjpegPlayer.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "80acae4f5a0dcba9130c59d377e77f1c96158b9651b5ece50a5e48d961b68e10",
+          "copied_normalized_sha256": "6161313b2e04c6be360f320e6c23e8bc00c40ac2d80ba567e2950674bc2a6a39"
+        },
+        {
+          "filename": "MjpegPlayer.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "4e6f40433746d1280af5919b6d53b19aceff564a25df1ba86c8199ad28353e3a",
+          "copied_normalized_sha256": "b1386cbf56f3c70346d97f797852f3b4ce0d979d805eb39cd22e3facfd80df3c"
+        },
+        {
+          "filename": "NoTouch.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "f7e90631ca546f75c0ec526b807a9667154e237c0a746c18c5c53e40b14a8d8a",
+          "copied_normalized_sha256": "630a6281f3b239d87630a8f3afab8ee3435b360e508ee0d37a682e95cf99a9f5"
+        },
+        {
+          "filename": "OfflinePlaybackPolicy.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "d4a1cf1a21c1e0507a7387a4cfda742e60b713d9fc5d1326512a06d23edbbeaa",
+          "copied_normalized_sha256": "96c9508c0a5b60bebee4d09951f0beaee96bf4e1c204ea50d58850c32a6ede86"
+        },
+        {
+          "filename": "OfflineSettings.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "deb0408c3652b2f1720f25e7cb3ab0f5bf41cfd53d9ac0f0f580ed8d17d05a6e",
+          "copied_normalized_sha256": "ad2bc36a508710d2a0397d350ca95b9db877635552709a080f4677b8e661bbd3"
+        },
+        {
+          "filename": "OfflineSettings.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "156eb989d1c401f4045c41a024eb21be25fc643ab53e07b76a7c154adfd6acc1",
+          "copied_normalized_sha256": "023d3f0331cd6d7e4b7f9581e77cc9e3c3304f2563f4ac739423e0649de2b9ca"
+        },
+        {
+          "filename": "PlaybackClock.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "3a7944949ca2714a317d1894c86227433c14ac498f1e68cfa431bbb9a4f08c4e",
+          "copied_normalized_sha256": "2429b13aee430e535963492e7254833fafbd7a2ef61ae020e36fb517570e2aa4"
+        },
+        {
+          "filename": "PlaybackMetrics.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "7d8838ada64f61f5e4ece413b58f0109954a12f08cea586d035e31c5362c051f",
+          "copied_normalized_sha256": "b87b6dd31f324199e1cf751d03ca039d11557234e5fff399db9cfb2e33ecaab7"
+        },
+        {
+          "filename": "RetryTimer.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "a0b3e7955a82e4398666c10a319e2f70c25747e7a53a40879f000640c46ccda0",
+          "copied_normalized_sha256": "5a705cca37f470cfdeea16172c7a4724723d26ef0d2bafb0e3e13fe9f2fa47c0"
+        },
+        {
+          "filename": "SDCard.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "849d9212fba68692bede41cbef4df376543fc94dc77d6d119328ddd9d2c2a79c",
+          "copied_normalized_sha256": "fa1340f7140fa4982869b8d4a52bdf9327dc597ef2ee41ddeb7a13c45eb915f7"
+        },
+        {
+          "filename": "SDCard.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c6b5b16aa610465cb8b47e3c8d0367acc59fdd3c0c324448acc74040448d075b",
+          "copied_normalized_sha256": "3d64707f1b5b57bbdd729088d939fc41bbbcd55a1137eb9181311c1b6132d756"
+        },
+        {
+          "filename": "secrets.example.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "61e731c2d412993af37442de29246c62b5471e3ba2b7e2598886ab99132b0077",
+          "copied_normalized_sha256": "05082a62d9287cfeead0cffeb230ea58bdccfd92a7c0d7605958b187b00e2459"
+        },
+        {
+          "filename": "SetupWebServer.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "91aae4c3055c15747fc0654b242fd61c26884a52beefd423939fe1d8ca398c08",
+          "copied_normalized_sha256": "17383c2dd51eb2dbda1f63b5c45832aa2168764af52fd03e924ba77c36708dda"
+        },
+        {
+          "filename": "SetupWebServer.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "bcdfdace92ccf22c834a59401f167f4cd9fe4634b01c2d26dd871e48080668db",
+          "copied_normalized_sha256": "e8bb2708542bd6879aca7d597102458885baeca621b8acb873e57d13e393cb82"
+        },
+        {
+          "filename": "ST7701BoardConfig.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "3327541b7898187e04c6037ee8f55a22cf964f8a9962915ee84d272e7d8f483b",
+          "copied_normalized_sha256": "2f81e27412d39b3090047b5ad7d850e8f59abc053bdba1c56b842efa947144d1"
+        },
+        {
+          "filename": "ST7701Display.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c973a4f4b4f56a5c97843eac4a338fd89890d7eb297da5223ea27ce303ad5dc9",
+          "copied_normalized_sha256": "9d4d74dcc93caaa9fe6b64ff3d1d442af5de3a1b9a217c13695506ed6d9af566"
+        },
+        {
+          "filename": "ST7701Display.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "8e2f19a401338ca9a52d3658fd5a295504b2c9f212a0200cae6be4717fd51890",
+          "copied_normalized_sha256": "f570a1c152ec5a1579513e049d0249dbdef714b0f145e66ef9171a25169bdb5e"
+        },
+        {
+          "filename": "StatusLayout.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "43c8755beff7e810dded6b3e9ac3e8067f09f59e96e4c08b9b272f028e1b9c56",
+          "copied_normalized_sha256": "ab0dc448e30589d96fbdc797247a43eb43e6743ef7142a5e3ca97d8246b00ac1"
+        },
+        {
+          "filename": "StatusSymbols.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "c702eb7f80987d18f3ea626311de0930c8d18fd6f69a648e433c1442b814d3ca",
+          "copied_normalized_sha256": "a7e34883a676885145523afe4eb0db2d5ff12e6c5f4d7878a996adbcb45d38cd"
+        },
+        {
+          "filename": "TargetSelection.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "a431dd33dfd8a5bea2f7e51e7cfb7dd5ccacdf7eb3d090575bf7b410aabc31bb",
+          "copied_normalized_sha256": "73073700faf914e3ceb20200f1578ba4955656b35cfdd8eec7fc91cf1e3e9f98"
+        },
+        {
+          "filename": "Touch.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "ab7aae027a02bd7edb1646cc5794a8c321b5a5f80d9d721665f6c6c8af214ee3",
+          "copied_normalized_sha256": "25f3a6d789304e616239e8557aab31caf5becbb8de7f95cbad23478778530e05"
+        },
+        {
+          "filename": "USBIdentification.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "59b0be9075dbcfdb93afe68872089028c17a72eb2c0fe4692f160f6db290272b",
+          "copied_normalized_sha256": "8e82bd690efef367f17044d3588582bbf95fde9903f0fd2dd70b5665ac7cf9e1"
+        },
+        {
+          "filename": "USBIdentification.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "3518ca5b2b123d420619fbc2f15b900ff2132ca91075d5fb7f6aea5c2340ea31",
+          "copied_normalized_sha256": "4d5e8258347e1a49198c76279b7f17d1a20dddbe61042e40bc4ef5b4eaac6314"
+        },
+        {
+          "filename": "USBWifi.cpp",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "955cba5e2ac42c62a29e012cc95d93f8986ecd277c20789875477a1c7a31b186",
+          "copied_normalized_sha256": "addd6a9ceb8c9b15e0c1673ae86ad8504486d5ebad8105fa7180b57ce527e45c"
+        },
+        {
+          "filename": "USBWifi.h",
+          "source_present": true,
+          "normalized_equal": true,
+          "copied_raw_sha256": "ef25554fa4bab97346038900cca404cbae5d533d490efbe1b75d23731322c3cb",
+          "copied_normalized_sha256": "fe718c069cba28cbf87eb577679d9d6c0576a4fdd9c6d0d618afa34fb6fe7ade"
+        }
+      ],
+      "ino_generated_line_differences": [
+        {
+          "operation": "insert",
+          "source_line_count": 0,
+          "compiled_line_count": 2,
+          "only_generated_header_or_prototype_lines": true
+        }
+      ],
+      "all_ino_changes_generated_only": true
+    },
+    "build_metadata": {
+      "compile_result_success": true,
+      "compile_command_count": 231,
+      "application_sha256": "19097d428a10be0094644f77778005216224be446e8f7699e5e172b7e6639782",
+      "expected_version_literal_in_application": true,
+      "expected_board_literal_in_application": true,
+      "gamma_log_presence_in_application": [
+        true,
+        false
+      ],
+      "diagnostic_chart_caption_present_in_application": false
+    },
+    "toolchain": {
+      "arduino_esp32": "3.3.11",
+      "compiler": "GCC 14.2.0",
+      "compiler_report": "xtensa-esp-elf-g++.exe (crosstool-NG esp-14.2.0_20260121) 14.2.0",
+      "libraries": {
+        "GFX Library for Arduino": "1.6.7",
+        "JPEGDEC": "1.8.4",
+        "ArduinoJson": "7.4.3",
+        "Async TCP": "3.4.10",
+        "ESP Async WebServer": "3.11.2"
+      }
+    },
+    "credential_evidence": {
+      "secrets_h_read": false,
+      "dependency_secrets_h_reference": false,
+      "compile_commands_secrets_h_reference": false,
+      "compile_commands_known_credential_define_reference": false,
+      "build_options_secrets_h_reference": false,
+      "includes_cache_secrets_h_reference": false,
+      "libraries_cache_secrets_h_reference": false,
+      "copied_source_secrets_h_include": false,
+      "ssid_default_empty": true,
+      "password_default_empty": true,
+      "app_config_matches_source": true,
+      "usb_wifi_matches_source": true,
+      "credentials_supplied_at_runtime_and_saved_after_usb_connection": true,
+      "app_config_uses_nvs_blob_writes": true,
+      "app_config_commits_nvs": true
+    },
+    "build_timestamps_utc": {
+      "ESPImageDisplay.ino.bin": "2026-10-12T16:56:39.210007+00:00",
+      "sketch/ESPImageDisplay.ino.cpp.o": "2026-10-12T16:56:32.536564+00:00",
+      "sketch/AppConfig.cpp.o": "2026-10-12T16:56:30.976328+00:00",
+      "sketch/USBWifi.cpp.o": "2026-10-12T16:15:43.699456+00:00",
+      "sketch/CheapYellowDisplay.cpp.o": "2026-10-12T16:56:31.892058+00:00",
+      "sketch/FirmwareTarget.h": "2026-10-12T16:56:21.742091+00:00"
+    },
+    "limitations": [
+      "No firmware compile/link, flashing or physical test was performed by this audit.",
+      "Source/dependency evidence and expected binary literals support provenance but do not cryptographically attest compiler output or prove absence of arbitrary credentials in all binary data.",
+      "Ignored secrets.h was never opened or dumped.",
+      "Some unchanged objects (USBWifi.cpp.o) were reused by the manual Arduino build; their copied sources match the clean checkout.",
+      "Hardware acceptance is supplied separately by the maintainer; this audit does not infer acceptance from compile success."
+    ]
+  },
+  "verification_performed": [
+    "Verified compiled target/version, clean source commit and copied-source correspondence.",
+    "Copied four flash_args binaries and both export metadata files unchanged into a separate board/version directory.",
+    "package-firmware.ps1 generated manifest from actual exported offsets and DIO/80 MHz/4 MB settings.",
+    "Release validator passed image-header, chip, offset, erase-overlap, flash-capacity, partition-fit and SHA-256 checks.",
+    "Actual desktop firmware validator accepted the local package and extracted ZIP.",
+    "ZIP contains exactly the four binaries, clean manifest and byte-identical project license.",
+    "Distribution tooling tests: 16 passed; app release parser accepted the exact CYD 1.1.43 naming."
+  ],
+  "verification_limits": [
+    "No firmware compile/link, flashing or physical test was performed by this audit.",
+    "Source/dependency evidence and expected binary literals support provenance but do not cryptographically attest compiler output or prove absence of arbitrary credentials in all binary data.",
+    "Ignored secrets.h was never opened or dumped.",
+    "Some unchanged objects (USBWifi.cpp.o) were reused by the manual Arduino build; their copied sources match the clean checkout.",
+    "Hardware acceptance is supplied separately by the maintainer; this audit does not infer acceptance from compile success.",
+    "Hardware acceptance covers the maintainer CYD, not measured color accuracy or every panel variant.",
+    "Native bitmap chart streaks remain unresolved; released normal media uses the tested big-endian JPEG path with diagnostic disabled."
+  ],
+  "release_packages": [
+    {
+      "board_target": "CHEAP_YELLOW_DISPLAY",
+      "firmware_version": "1.1.43",
+      "zip_name": "ESPImageDisplay-CHEAP_YELLOW_DISPLAY-1.1.43.zip",
+      "zip_size": 840289,
+      "zip_sha256": "89eecbd763ca47e954944216c7fc3de7f2976b97e4064371aa8809a6e6123ef9",
+      "manifest_fingerprint": "a50b0b95c773b9e6e47a87839da451e585f540c702fed55c6462b3820a90e1fb",
+      "zip_files": [
+        "ESPImageDisplay.ino.bin",
+        "ESPImageDisplay.ino.bootloader.bin",
+        "ESPImageDisplay.ino.partitions.bin",
+        "LICENSE.txt",
+        "boot_app0.bin",
+        "manifest.json"
+      ],
+      "license_matches_repository": true,
+      "release_validator": "passed",
+      "chip": "esp32",
+      "segments": 4,
+      "desktop_validation": "passed"
+    }
+  ],
+  "publication_requested_on": "2026-10-12"
+}
