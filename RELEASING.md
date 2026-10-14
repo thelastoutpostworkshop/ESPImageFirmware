@@ -127,6 +127,11 @@ The local preparation command does not create commits, tags, drafts, or uploads.
 
 ## Current preparation
 
+- **1.1.45:** All five boards; prevent native-USB diagnostic output from
+  stalling video previews, offline playback, and command acknowledgement.
+  Supplied exports and maintainer-confirmed hardware acceptance are
+  recorded in `releases/v1.1.45.md` and `releases/v1.1.45-builds.json`.
+
 - **1.1.44:** All five boards; optional saved-orientation filtering for SD
   slideshows/video loops and immutable queued image saves. Fresh supplied
   exports and maintainer-confirmed hardware acceptance are recorded in
